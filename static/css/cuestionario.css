@@ -1,0 +1,50 @@
+
+
+.cuestionario
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/arquitectura3.jpg);
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.form-cuestionario
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px;
+    
+}
+.form-cuestionario label
+{
+    font-size: 20px;
+    text-align: center;
+}
+.form-cuestionario button
+{
+    background-color: #006847;
+    border: none;
+    color: white;
+    font-size: 25px;
+    padding: 25px;
+    margin: 0 10px;
+    border-radius: 20px;
+}
+textarea {
+    resize: vertical;
+    height: 65px;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+
+hr:not([size]) {
+    height: 5px !important;
+}
+hr
+{
+    opacity: 1 !important;
+}

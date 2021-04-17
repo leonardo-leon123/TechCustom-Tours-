@@ -1,0 +1,91 @@
+.hero
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/mexico.jpg);
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+}
+.hero h1 
+{
+    font-size: 82px;
+    text-align: center;
+}
+.hero p
+{
+    text-align: justify;
+    font-size: 19px;
+    padding: 20px;
+}
+.hero button
+{
+    background-color: #006847;
+    border: none;
+    color: white;
+    font-size: 25px;
+    padding: 25px;
+    margin: 0 30px;
+    border-radius: 20px;
+}
+.section-info
+{
+    display: flex;
+    flex-direction: column;
+}
+.section-info h1 
+{
+    font-size: 50px;
+    text-align: center;
+}
+.section-info p
+{
+    text-align: justify;
+    font-size: 19px;
+    padding: 20px;
+}
+.section-info img
+{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.section-info button
+{
+    background-color: #006847;
+    border: none;
+    color: white;
+    font-size: 25px;
+    padding: 25px;
+    margin: 0 30px;
+    border-radius: 20px;
+}
+.section-info .rojo
+{
+    color: red;
+}
+.section-info .naranja
+{
+    color: orange;
+}
+.section-info .amarillo
+{
+    color: rgb(219, 219, 6);
+}
+.section-info .verde
+{
+    color: green;
+}
+@media screen and (max-width: 420px) {
+    .hero
+    {
+        height: 130vh;
+    }
+    .section-info
+    {
+        margin: 120px 0;
+    }
+  }

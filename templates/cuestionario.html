@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{% block title %}Cuestionario{% endblock %}
+
+{%block content%}
+    <section class="cuestionario" >
+    <h1 id="title" >Contesta las preguntas para decirte tu destino personalizado</h1>
+    <hr>
+    <form class="form-cuestionario">
+        <label for="pregunta1" id="pregunta1">¿Que sentirías al estar rodeado de un jardin rodeado de flores?</label>
+        <textarea name="" id="r-pregunta1" cols="30" rows="10"></textarea>
+        <div id="sentiment" style="display: none">
+              <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+              <strong>Sentiment label for input:</strong> <span id="input-sentiment1"></span>
+              <br/>
+              <h1 id="emoji-positive1" style="display: none;">😂</h1>
+              <h1 id="emoji-neutral1" style="display: none;">😐</h1>
+              <h1 id="emoji-negative1" style="display: none;">😡</h1>
+            </div>
+        <br>
+        <label for="pregunta1" id="pregunta2">¿Que pensarías al estar en contacto de la civilización antigua y su arquitectura?</label>
+        <textarea name="" id="r-pregunta2" cols="30" rows="10"></textarea>
+        <div id="sentiment" style="display: none">
+            <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+            <strong>Sentiment label for input:</strong> <span id="input-sentiment2"></span>
+            <br/>
+            <h1 id="emoji-positive2" style="display: none;">😂</h1>
+            <h1 id="emoji-neutral2" style="display: none;">😐</h1>
+            <h1 id="emoji-negative2" style="display: none;">😡</h1>
+          </div>
+        <br>
+        <label for="pregunta1" id="pregunta3">¿Qué despierta en tí la música, la arquitectura y las artes escénicas?</label>
+        <textarea name="" id="r-pregunta3" cols="30" rows="10"></textarea>
+        <div id="sentiment" style="display: none">
+            <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+            <strong>Sentiment label for input:</strong> <span id="input-sentiment3"></span>
+            <br/>
+            <h1 id="emoji-positive3" style="display: none;">😂</h1>
+            <h1 id="emoji-neutral3" style="display: none;">😐</h1>
+            <h1 id="emoji-negative3" style="display: none;">😡</h1>
+          </div>
+        <br>
+        <button type="submit" id="sentiment-analysis">
+            Analiza mis resultados
+        </button>
+        
+    </form>
+</section>
+
+{%endblock%}
