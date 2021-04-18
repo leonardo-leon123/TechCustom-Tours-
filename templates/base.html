@@ -5,62 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/navbar.css">
     <link rel="stylesheet" href="static/css/base.css">
     <link rel="stylesheet" href="static/css/cuestionario.css">
     <link rel="stylesheet" href="static/css/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> {% block title %}{% endblock %} - FuTourism  </title>
 </head>
 <body>
     <div class="topnav" id="myTopnav">
-      <a href="#home"><img src="static/img/logo.png" width="100px" alt=""></a>
+      <a href="/"><img src="static/img/logo.png" width="100px" alt=""></a>
       
-        <a href="#news" style="background: #006847" >News</a>
-        <a href="#contact" style="background: #006847">Contact</a>
-        <a href="#about" style="background: #006847">About</a>
+        <a href="#news" style="background: #006847" >Inicio</a>
+        <a href="#contact" style="background: #006847">Cuestionario</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
         </a>
       </div>
+      
     {% block content %}
     {% endblock %}
+    <form action="">
     <footer>
-      <form class="translate" >
-        <!-- Enter text to translate. -->
-        <!-- Select output language. -->
-        <div class="form-group">
-          <label for="select-language"><strong>Translate to:</strong></label>
-          <select class="form-control" id="select-language">
-            <option value="ar">Arabic</option>
-            <option value="ca">Catalan</option>
-            <option value="zh-Hans">Chinese (Simplified)</option>
-            <option value="zh-Hant">Chinese (Traditional)</option>
-            <option value="hr">Croatian</option>
-            <option value="en">English</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-            <option value="el">Greek</option>
-            <option value="he">Hebrew</option>
-            <option value="hi">Hindi</option>
-            <option value="it">Italian</option>
-            <option value="ja">Japanese</option>
-            <option value="ko">Korean</option>
-            <option value="pt">Portuguese</option>
-            <option value="ru">Russian</option>
-            <option value="es">Spanish</option>
-            <option value="th">Thai</option>
-            <option value="tr">Turkish</option>
-            <option value="vi">Vietnamese</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2" id="translate">Translate text</button><br>
-        <div id="detected-language" style="display: none">
-          <strong>Detected language:</strong> <span id="detected-language-result"></span><br/>
-          <strong>Detection confidence:</strong> <span id="confidence"></span><br /><br/>
-        </div>
+      
     </footer>
     <script src="static/js/navbar.js" ></script>
     <script src="static/js/translator.js" ></script>

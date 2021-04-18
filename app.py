@@ -20,8 +20,12 @@ def traductor_text():
     text_input3 = data['text3']
     text_input4 = data['text4']
     text_input5 = data['text5']
+    text_input6 = data['text6']
+    text_input7 = data['text7']
+    text_input8 = data['text8']
+    text_input9 = data['text9']
     translation_output = data['to']
-    response = translate.get_translation(text_input, text_input2, text_input3, text_input4, text_input5, translation_output)
+    response = translate.get_translation(text_input, text_input2, text_input3, text_input4, text_input5, text_input6, text_input7, text_input8, text_input9, translation_output)
     print(response)
     return jsonify(response)
 

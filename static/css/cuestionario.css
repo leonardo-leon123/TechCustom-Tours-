@@ -2,11 +2,12 @@
 
 .cuestionario
 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/arquitectura3.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/bellas-artes.jpg);
     color: white;
     background-position: center;
     background-repeat: no-repeat;
-    height: 120vh;
+    background-size: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -19,9 +20,13 @@
     margin: 0 50px;
     
 }
+#title
+{
+    margin: 20px 40px;
+}
 .form-cuestionario label
 {
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
 }
 .form-cuestionario button
@@ -34,11 +39,31 @@
     margin: 0 10px;
     border-radius: 20px;
 }
+.resultado
+{
+    background: white;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.resultado button
+{
+    background-color: #006847;
+    border: none;
+    color: white;
+    font-size: 25px;
+    padding: 25px;
+    margin: 0 10px;
+    border-radius: 20px;
+}
 textarea {
-    resize: vertical;
+    resize: none;
     height: 65px;
-    border-radius: 30px;
+    border-radius: 10px;
     margin: 10px 0;
+    text-align: center;
+    margin: 15px !important;
 }
 
 hr:not([size]) {

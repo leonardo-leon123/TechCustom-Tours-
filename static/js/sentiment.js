@@ -1,4 +1,9 @@
+
 $("#sentiment-analysis").on("click", function(e) {
+
+  document.getElementById('jardines').hidden = true
+  document.getElementById('chichen').hidden = true
+  document.getElementById('bellas').hidden = true
 
     e.preventDefault();
     document.getElementById("emoji-positive1").style.display = "none";
@@ -32,19 +37,19 @@ $("#sentiment-analysis").on("click", function(e) {
         },
         dataType: "json",
         data: JSON.stringify(sentimentRequest),
-        success: function(data)
-        {
+        success: function(data){
           console.log(data)
+          document.getElementById("try-again").style.display = "block"
           for (var i = 0; i < data.documents.length; i++) {
             if (typeof data.documents[i] !== "undefined"){
-              if (data.documents[i].id === "1") {
-                document.getElementById("input-sentiment1").textContent = data.documents[i].sentiment;
+              if (data.documents[0].id === "1") {
+                document.getElementById("input-sentiment1").textContent = data.documents[0].sentiment;
               }
-              if (data.documents[i].id === "2") {
-                document.getElementById("input-sentiment2").textContent = data.documents[i].sentiment;
+              if (data.documents[1].id === "2") {
+                document.getElementById("input-sentiment2").textContent = data.documents[1].sentiment;
               }
-              if (data.documents[i].id === "3") {
-                document.getElementById("input-sentiment3").textContent = data.documents[i].sentiment;
+              if (data.documents[2].id === "3") {
+                document.getElementById("input-sentiment3").textContent = data.documents[2].sentiment;
               }
             }
           }
@@ -56,60 +61,67 @@ $("#sentiment-analysis").on("click", function(e) {
             }
           }
           if (document.getElementById("input-sentiment1").textContent !== ''){
-            document.getElementById("sentiment").style.display = "block";
+            document.getElementById("sentiment1").style.display = "block";
           }
           if (document.getElementById("input-sentiment2").textContent !== ''){
-            document.getElementById("sentiment").style.display = "block";
+            document.getElementById("sentiment2").style.display = "block";
           }
           if (document.getElementById("input-sentiment3").textContent !== ''){
-            document.getElementById("sentiment").style.display = "block";
+            document.getElementById("sentiment3").style.display = "block";
           }
-          if(data.documents[i].sentiment == "positive")
+          if(data.documents[0].sentiment == "positive")
           {
             document.getElementById("emoji-positive1").style.display = "block";
           }
-          if(data.documents[i].sentiment == "neutral")
+          if(data.documents[0].sentiment == "neutral")
           {
             document.getElementById("emoji-neutral1").style.display = "block";
           }
-          if(data.documents[i].sentiment == "negative")
+          if(data.documents[0].sentiment == "negative")
           {
             document.getElementById("emoji-negative1").style.display = "block";
           }
-          if (document.getElementById("input-sentiment2").textContent !== ''){
-            document.getElementById("sentiment").style.display = "block";
-          }
-          if(data.documents[i].sentiment == "positive")
+          if(data.documents[1].sentiment == "positive")
           {
             document.getElementById("emoji-positive2").style.display = "block";
           }
-          if(data.documents[i].sentiment == "neutral")
+          if(data.documents[1].sentiment == "neutral")
           {
             document.getElementById("emoji-neutral2").style.display = "block";
           }
-          if(data.documents[i].sentiment == "negative")
+          if(data.documents[1].sentiment == "negative")
           {
             document.getElementById("emoji-negative2").style.display = "block";
           }
-          if (document.getElementById("input-sentiment3").textContent !== ''){
-            document.getElementById("sentiment").style.display = "block";
-          }
-          if(data.documents[i].sentiment == "positive")
+          if(data.documents[2].sentiment == "positive")
           {
             document.getElementById("emoji-positive3").style.display = "block";
           }
-          if(data.documents[i].sentiment == "neutral")
+          if(data.documents[2].sentiment == "neutral")
           {
             document.getElementById("emoji-neutral3").style.display = "block";
           }
-          if(data.documents[i].sentiment == "negative")
+          if(data.documents[2].sentiment == "negative")
           {
             document.getElementById("emoji-negative3").style.display = "block";
           }
           
+          if(data.documents[0].sentiment == "positive")
+          {
+            document.getElementById('jardines').hidden = false
+            document.getElementById("error").style.display = "none";
+          }
+          if(data.documents[1].sentiment == "positive")
+          {
+            document.getElementById('chichen').hidden = false
+            document.getElementById("error").style.display = "none";
+          }
+          if(data.documents[2].sentiment == "positive")
+          {
+            document.getElementById('bellas').hidden = false
+            document.getElementById("error").style.display = "none";
+          }
         }
-        
-        
       });
     }
   });

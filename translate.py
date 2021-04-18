@@ -9,7 +9,7 @@ location = 'southcentralus'
 # When the translate text button is pressed in our Flask app, the Ajax request
 # will grab these values from our web app, and use them in the request.
 # See main.js for Ajax calls.
-def get_translation(text_input, text_input2, text_input3, text_input4, text_input5, language_output):
+def get_translation(text_input, text_input2, text_input3, text_input4, text_input5, text_input6, text_input7, text_input8, text_input9, language_output):
     base_url = 'https://api.cognitive.microsofttranslator.com'
     path = '/translate?api-version=3.0'
     params = '&to=' + language_output
@@ -38,6 +38,18 @@ def get_translation(text_input, text_input2, text_input3, text_input4, text_inpu
     {
         'text': text_input5,
     },
+    {
+        'text': text_input6,
+    },
+    {
+        'text': text_input7,
+    },
+    {
+        'text': text_input8,
+    },
+    {
+        'text': text_input9,
+    }
     ]
     response = requests.post(constructed_url, headers=headers, json=body)
     return response.json()

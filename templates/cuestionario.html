@@ -2,37 +2,73 @@
 {% block title %}Cuestionario{% endblock %}
 
 {%block content%}
+<form class="translate" >
+  <!-- Enter text to translate. -->
+  <!-- Select output language. -->
+  <div class="form-group">
+    <label for="select-language"><strong>Translate to:</strong></label>
+    <select class="form-control" id="select-language">
+      <option value="ar">Arabic</option>
+      <option value="ca">Catalan</option>
+      <option value="zh-Hans">Chinese (Simplified)</option>
+      <option value="zh-Hant">Chinese (Traditional)</option>
+      <option value="hr">Croatian</option>
+      <option value="en">English</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="el">Greek</option>
+      <option value="he">Hebrew</option>
+      <option value="hi">Hindi</option>
+      <option value="it">Italian</option>
+      <option value="ja">Japanese</option>
+      <option value="ko">Korean</option>
+      <option value="pt">Portuguese</option>
+      <option value="ru">Russian</option>
+      <option value="es">Spanish</option>
+      <option value="th">Thai</option>
+      <option value="tr">Turkish</option>
+      <option value="vi">Vietnamese</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2" id="translate">Translate text</button><br>
+  <div hidden id="detected-language" style="display: none">
+    <strong>Detected language:</strong> <span id="detected-language-result"></span><br/>
+    <strong>Detection confidence:</strong> <span id="confidence"></span><br /><br/>
+  </div>
+</form>
     <section class="cuestionario" >
     <h1 id="title" >Contesta las preguntas para decirte tu destino personalizado</h1>
     <hr>
+
+
     <form class="form-cuestionario">
-        <label for="pregunta1" id="pregunta1">¿Que sentirías al estar rodeado de un jardin rodeado de flores?</label>
+        <label for="pregunta1" id="pregunta1">¿Que sentirías al estar rodeado de un jardin lleno de flores?</label>
         <textarea name="" id="r-pregunta1" cols="30" rows="10"></textarea>
-        <div id="sentiment" style="display: none">
-              <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
-              <strong>Sentiment label for input:</strong> <span id="input-sentiment1"></span>
+        <div id="sentiment1" style="display: none">
+              <p hidden >Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+              <strong>The Sentiment found on your Answer:</strong> <span id="input-sentiment1"></span>
               <br/>
               <h1 id="emoji-positive1" style="display: none;">😂</h1>
               <h1 id="emoji-neutral1" style="display: none;">😐</h1>
               <h1 id="emoji-negative1" style="display: none;">😡</h1>
             </div>
         <br>
-        <label for="pregunta1" id="pregunta2">¿Que pensarías al estar en contacto de la civilización antigua y su arquitectura?</label>
+        <label for="pregunta1" id="pregunta2">¿Que pensarías al estar en contacto de la civilización antigua y su arquitectura antigua?</label>
         <textarea name="" id="r-pregunta2" cols="30" rows="10"></textarea>
-        <div id="sentiment" style="display: none">
-            <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
-            <strong>Sentiment label for input:</strong> <span id="input-sentiment2"></span>
+        <div id="sentiment2" style="display: none">
+            <p hidden >Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+            <strong>The Sentiment found on your Answer:</strong> <span id="input-sentiment2"></span>
             <br/>
             <h1 id="emoji-positive2" style="display: none;">😂</h1>
             <h1 id="emoji-neutral2" style="display: none;">😐</h1>
             <h1 id="emoji-negative2" style="display: none;">😡</h1>
           </div>
         <br>
-        <label for="pregunta1" id="pregunta3">¿Qué despierta en tí la música, la arquitectura y las artes escénicas?</label>
+        <label for="pregunta1" id="pregunta3">¿Qué despierta en tí la música, la arquitectura moderna, los museos y las artes escénicas?</label>
         <textarea name="" id="r-pregunta3" cols="30" rows="10"></textarea>
-        <div id="sentiment" style="display: none">
-            <p>Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
-            <strong>Sentiment label for input:</strong> <span id="input-sentiment3"></span>
+        <div id="sentiment3" style="display: none">
+            <p hidden >Sentiment can be labeled as "positive", "negative", "neutral", or "mixed". </p>
+            <strong>The Sentiment found on your Answer:</strong> <span id="input-sentiment3"></span>
             <br/>
             <h1 id="emoji-positive3" style="display: none;">😂</h1>
             <h1 id="emoji-neutral3" style="display: none;">😐</h1>
@@ -42,8 +78,63 @@
         <button type="submit" id="sentiment-analysis">
             Analiza mis resultados
         </button>
-        
     </form>
+    <hr>
+    <div class="resultado" > 
+      <h1 id="resultado-title">
+        El Resultado de tu encuesta es:
+      </h1>
+      <div class="resultado-item" id="bellas" hidden >
+        <h2 id="bellas-title">
+          Bellas Artes, Ciduad de México
+        </h2>
+        <p id="bellas-desc">
+          El Palacio de Bellas Artes es un recinto cultural ubicado en el Centro Histórico de la Ciudad de México, considerado el más importante en la manifestación de las artes en México y una de las casas de ópera más renombradas del mundo.
+          
+          Este ha sido escenario y testigo de impactantes acontecimientos tanto artísticos, como sociales y políticos
+        </p>
+        <div class="img-container"> 
+          <img src="static/img/bellas-artes2.jpg" width="250px" alt="bellas artes" id="bellas-img">
+        </div>
+        <hr>
+        
+      </div>
+      <div class="resultado-item" id="chichen" hidden >
+        <h2 id="chichen-title">
+          Chichén Itzá, Yucatán
+        </h2>
+        <p id="chichen-desc">
+          Su nombre significa "la cuidad al borde del pozo de los itzaes". Esta zona arqueologica reune material maya tanto como del centro de mexico, es famosa por el juego de luz y sombra que en cada equinoccio ocurre sobre la piramide
+        </p>
+        <div class="img-container"> 
+          <img src="static/img/piramid2.jpg" width="250px" alt="chichen" id="chichen-img">
+        </div>
+          <hr>
+        
+      </div>
+      <div class="resultado-item" id="jardines" hidden >
+        <h2 id="jardines-title">
+          Jardines de México, Morelos
+        </h2>
+        <p id="jardines-desc">
+          Es Un parque temático donde recreamos los colores, aromas y texturas de la flora mexicana y del mundo.
+          Un lugar
+          100% MEXICANO
+    
+          Donde la belleza de nuestros jardines y la magnífica arquitectura conviven en armonía, creando un lugar naturalmente inolvidable
+          Los jardines florales más grandes del mundo.
+        </p>
+        <div class="img-container"> 
+          <img src="static/img/jardines.jpg" width="250px" alt="jardines" id="jardines-img">
+        </div>
+        <hr>
+      </div>
+      <div class="resultado-item" id="error">
+        <p> No encontramos ningun lugar para tí, vuelve a intentarlo </p>
+      </div>
+      <button id="try-again" onclick="location.href = '/cuestionario';" >Volver a intentarlo</button>
+    </div>
+      </section>
 </section>
 
 {%endblock%}

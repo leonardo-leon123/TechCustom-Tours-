@@ -9,6 +9,10 @@ $(function()
         var pregunta2 = document.getElementById('pregunta2').innerHTML;
         var pregunta3 = document.getElementById('pregunta3').innerHTML;
         var btn_cuestionario = document.getElementById('sentiment-analysis').innerHTML;
+        var resultado_title = document.getElementById('resultado-title').innerHTML;
+        var bellas_desc = document.getElementById('bellas-desc').innerHTML;
+        var chichen_desc = document.getElementById('chichen-desc').innerHTML;
+        var jardines_desc = document.getElementById('jardines-desc').innerHTML;
         var languageVal = document.getElementById("select-language").value;
         var translateRequest = {
             'text': title,
@@ -16,6 +20,10 @@ $(function()
             'text3': pregunta2,
             'text4': pregunta3,
             'text5': btn_cuestionario,
+            'text6': resultado_title,
+            'text7': bellas_desc,
+            'text8': chichen_desc,
+            'text9': jardines_desc,
             'to': languageVal,
         }
         if(translateRequest !== "")
@@ -39,6 +47,10 @@ $(function()
                         document.getElementById("pregunta2").innerHTML = data[2].translations[0].text;
                         document.getElementById("pregunta3").innerHTML = data[3].translations[0].text;
                         document.getElementById("sentiment-analysis").innerHTML = data[4].translations[0].text;
+                        document.getElementById("resultado-title").innerHTML = data[5].translations[0].text;
+                        document.getElementById("bellas-desc").innerHTML = data[6].translations[0].text;
+                        document.getElementById("chichen-desc").innerHTML = data[7].translations[0].text;
+                        document.getElementById("jardines-desc").innerHTML = data[8].translations[0].text;
                         document.getElementById("detected-language-result").textContent = data[i].detectedLanguage.language;
                         if(document.getElementById("detected-language-result").textContent !=="")
                         {
